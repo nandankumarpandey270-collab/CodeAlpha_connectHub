@@ -1,0 +1,342 @@
+/* ==========================
+   CONNECTHUB - MODERN DESIGN
+   ========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #5865f2;
+  --primary-dark: #4652d9;
+  --purple: #8657e8;
+  --background: #f4f6fb;
+  --surface: #ffffff;
+  --text: #20243a;
+  --muted: #7b8197;
+  --border: #e8eaf2;
+  --shadow: 0 8px 30px rgba(35, 43, 90, 0.07);
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Top Navigation */
+
+.navbar {
+  background: linear-gradient(120deg, #5865f2, #8657e8);
+  color: white;
+  padding: 22px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 5px 25px rgba(88, 101, 242, 0.22);
+}
+
+.navbar h1 {
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.navbar p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Main Layout */
+
+.layout {
+  width: min(1440px, 100%);
+  margin: 35px auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 260px;
+  gap: 25px;
+  align-items: start;
+}
+
+/* All Cards */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 35px rgba(35, 43, 90, 0.1);
+}
+
+/* Profile */
+
+.layout > .profile {
+  text-align: center;
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 15px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #5865f2, #a46cf4);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(88, 101, 242, 0.25);
+}
+
+.layout > .profile h2 {
+  font-size: 19px;
+  margin-bottom: 3px;
+}
+
+.layout > .profile > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 22px;
+  padding-top: 17px;
+}
+
+.stats p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.stats strong {
+  display: block;
+  color: var(--primary);
+  font-size: 21px;
+}
+
+/* Feed Heading */
+
+.feed > h2 {
+  font-size: 23px;
+  font-weight: 750;
+  margin: 28px 0 16px;
+}
+
+/* Create a Post */
+
+.composer h2 {
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 115px;
+  resize: vertical;
+  padding: 16px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: #f8f9fd;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+textarea::placeholder {
+  color: #9ca2b5;
+}
+
+textarea:focus {
+  background: white;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(88, 101, 242, 0.1);
+}
+
+/* Buttons */
+
+button {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  border: none;
+  border-radius: 11px;
+  padding: 11px 19px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#publishBtn {
+  margin-top: 14px;
+  background: linear-gradient(120deg, #5865f2, #8657e8);
+  color: white;
+  box-shadow: 0 5px 14px rgba(88, 101, 242, 0.2);
+}
+
+#publishBtn:hover {
+  background: linear-gradient(120deg, #4652d9, #7544d6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(88, 101, 242, 0.3);
+}
+
+#publishBtn:active,
+button:active {
+  transform: scale(0.97);
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #23865a;
+}
+
+/* Feed Posts */
+
+.post {
+  margin-bottom: 18px;
+  overflow-wrap: anywhere;
+  animation: appear 0.35s ease both;
+}
+
+.post h3 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.post small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.post > p {
+  font-size: 15px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  margin-bottom: 18px;
+}
+
+.likeBtn {
+  color: var(--primary);
+  background: #f0f1ff;
+  border: 1px solid #e3e5ff;
+  padding: 9px 16px;
+}
+
+.likeBtn:hover {
+  background: #e3e5ff;
+  transform: translateY(-1px);
+}
+
+/* People to Follow */
+
+.people h2 {
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+
+#peopleContainer {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Smooth Animation */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .people {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .navbar h1 {
+    font-size: 26px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 20px auto;
+    padding: 0 14px;
+    gap: 18px;
+  }
+
+  .layout > .profile,
+  .people {
+    grid-column: auto;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .feed > h2 {
+    font-size: 21px;
+    margin-top: 24px;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  #publishBtn {
+    width: 100%;
+  }
+}

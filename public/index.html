@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnectHub - Social Media</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>ConnectHub</h1>
+    <p>Connect with your world</p>
+  </header>
+
+  <main class="layout">
+    <aside class="card profile">
+      <div class="avatar">N</div>
+      <h2>Nandan Pandey</h2>
+      <p>@nandan_dev</p>
+      <p>Full Stack Developer in progress</p>
+      <div class="stats">
+        <p>Posts: <strong id="myPosts">0</strong></p>
+        <p>Followers: <strong id="myFollowers">0</strong></p>
+      </div>
+    </aside>
+
+    <section class="feed">
+      <div class="card composer">
+        <h2>Create a Post</h2>
+        <textarea id="postContent" placeholder="What's on your mind?"></textarea>
+        <button id="publishBtn">Publish Post</button>
+        <p id="message"></p>
+      </div>
+
+      <h2>Your Feed</h2>
+      <div id="postsContainer"></div>
+    </section>
+
+    <aside class="card people">
+      <h2>People to Follow</h2>
+      <div id="peopleContainer"></div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
